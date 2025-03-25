@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+ <style>
+
+ /* Common styles NE PAS MODIFIER */
+ body, html{
+ padding:0;
+ margin:0;
+ background:#999;
+ width:100vw;
+ min-height:100vh;
+ }
+ header{
+ background:#feb;
+ }
+ article{
+ background:#dd8;
+ }
+ nav{
+ background:#ccf;
+ }
+ aside{
+ background:rgb(9, 162, 222);
+ }
+ footer{
+ background:#feb;
+ }
+ header, article, nav, aside, footer{
+ border-radius:5px;
+ padding:5px;
+ }
+
+ /* Votre code CSS pour design par Grid ci-après */
+@media screen and (min-width: 640px) {
+ body{
+ padding: 15px;
+ display: grid;
+ grid-gap:15px;
+ grid-template-areas:
+ "head head head"
+ "nav main aside"
+ "footer footer footer";
+ grid-template-columns: minmax(150px,auto) 1fr minmax(150px,auto);
+ grid-template-rows:minmax(150px,auto) 1fr minmax(150px,auto) ;
+ box-sizing: border-box;
+ 
+ }
+ footer{
+ grid-area: footer;
+ }
+ aside{
+ grid-area: aside;
+ }
+ nav{
+ grid-area: nav;
+ }
+ article{
+ grid-area: main;
+ }
+ header{
+ grid-area: head;
+ }
+}
+
+@media screen and (max-width: 640px) {
+ body{
+ display: grid;
+ grid-gap:15px;
+ grid-template-columns: auto;
+ grid-template-rows:80px 1fr repeat(3,80px) ;
+ box-sizing: border-box;
+ padding:15px;
+ }
+ footer{
+ grid-column: 1;
+ grid-row: 5;
+ }
+ aside{
+ grid-column: 1;
+ grid-row: 4;
+ }
+ nav{
+ grid-column: 1;
+ grid-row:3;
+ }
+ article{
+ grid-column: 1;
+ grid-row: 2;
+ }
+ header{
+ grid-column: 1;
+ grid-row: 1;
+ }
+ 
+}
+ 
+
+
+ </style>
+</head>
+<!-- NE PAS MODIFIER LE CODE CI-APRES -->
+<body>
+ <header>Header</header>
+ <article>Article</article>
+ <nav>Navigation</nav>
+ <aside>Aside</aside>
+ <footer>Footer</footer>
+</body>
+</html>
